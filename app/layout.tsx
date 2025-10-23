@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,11 +18,11 @@ export default function RootLayout({
         <header className="p-6 border-b border-gray-700 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-accent">Cassiano Dev</h1>
           <nav className="space-x-6 text-sm">
-            <a href="/" className="hover:text-accent transition">Início</a>
-            <a href="/about" className="hover:text-accent transition">Sobre</a>
-            <a href="/projects" className="hover:text-accent transition">Projetos</a>
-            <a href="/skills" className="hover:text-accent transition">Skills</a>
-            <a href="/contact" className="hover:text-accent transition">Contato</a>
+            <Link href="/" className="hover:text-accent transition">Início</Link>
+            <Link href="/about" className="hover:text-accent transition">Sobre</Link>
+            <Link href="/projects" className="hover:text-accent transition">Projetos</Link>
+            <Link href="/skills" className="hover:text-accent transition">Skills</Link>
+            <Link href="/contact" className="hover:text-accent transition">Contato</Link>
           </nav>
         </header>
         <main className="flex-1">{children}</main>

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -28,12 +29,18 @@ export default function Hero() {
         transition={{ delay: 0.6, duration: 1 }}
         className="mt-10 flex gap-4"
       >
-        <button className="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition">
+        <Link
+          href="/projects"
+          className="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
+        >
           Ver Projetos
-        </button>
-        <button className="border border-gray-700 hover:bg-gray-800 px-6 py-3 rounded-xl text-gray-300 transition">
+        </Link>
+        <Link
+          href="/about"
+          className="border border-gray-700 hover:bg-gray-800 px-6 py-3 rounded-xl text-gray-300 transition"
+        >
           Sobre mim
-        </button>
+        </Link>
       </motion.div>
     </section>
   );
