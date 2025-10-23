@@ -1,13 +1,11 @@
-import Navbar from './components/navbar'
+import Navbar from "./components/navbar";
+import Hero from "./components/hero";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-gray-950 min-h-screen">
       <Navbar />
-      <section className="p-10 text-center">
-        <h1 className="text-4xl font-bold">Cassiano Sena</h1>
-        <p className="mt-4 text-gray-600">Desenvolvedor • IA • Portfólio</p>
-      </section>
+      <Hero />
     </main>
-  )
+  );
 }
