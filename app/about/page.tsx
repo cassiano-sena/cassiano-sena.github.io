@@ -3,7 +3,44 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function AboutPage() {
+export default function AboutPage({ lang }: { lang: "pt" | "en" }) {
+  const t = {
+    pt: {
+      title: "███ ARQUIVO DO SUJEITO: CASSIANO ███",
+      name: "Cassiano de Sena Crispim",
+      occupation: "Desenvolvedor Full Stack",
+      gender: "Masculino",
+      age: "[RESTRITO]",
+      height: "1.75 m",
+      eyeColor: "Indefinido",
+      likes: "Chá, Resolver Problemas",
+      dislikes: "Ruído",
+      location: "[SIGILOSO]",
+      fileCreated: "23.10.2025",
+      accessLevel: "ÔMEGA",
+      fileStatus: "CLASSIFICADO",
+      accessProjects: "Acessar Projetos",
+      contactAgent: "Contatar Agente",
+    },
+    en: {
+      title: "███ SUBJECT FILE: CASSIANO ███",
+      name: "Cassiano de Sena Crispim",
+      occupation: "Full Stack Developer",
+      gender: "Male",
+      age: "[REDACTED]",
+      height: "1.75 m",
+      eyeColor: "Undefined",
+      likes: "Tea, Problem Solving",
+      dislikes: "Noise",
+      location: "[REDACTED]",
+      fileCreated: "10.23.2025",
+      accessLevel: "OMEGA",
+      fileStatus: "CLASSIFIED",
+      accessProjects: "Access Projects",
+      contactAgent: "Contact Agent",
+    },
+  }[lang];
+
   return (
     <main className="about-page bg-gray-950 min-h-screen text-white font-mono relative overflow-hidden">
       {/* Fundo digital */}
@@ -16,11 +53,10 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="bg-gray-900/70 border border-gray-700 rounded-2xl shadow-lg p-10 w-full max-w-9xl backdrop-blur-sm relative"
+          className="bg-gray-900/70 border border-gray-700 rounded-2xl shadow-lg p-10 w-full max-w-5xl backdrop-blur-sm relative"
         >
           <div className="absolute top-4 right-6 text-xs text-gray-600">
-            FILE STATUS:{" "}
-            <span className="text-red-500 font-bold">CLASSIFIED</span>
+            FILE STATUS: <span className="text-red-500 font-bold">{t.fileStatus}</span>
           </div>
 
           {/* TÍTULO */}
@@ -29,12 +65,12 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-4xl md:text-5xl font-extrabold mb-8 text-red-500 tracking-widest about-glitch"
-            data-text="███ SUBJECT FILE: CASSIANO ███"
+            data-text={t.title}
           >
-            ███ SUBJECT FILE: CASSIANO ███
+            {t.title}
           </motion.h1>
 
-          {/* CABEÇALHO COM FOTO + INFOS BÁSICAS */}
+          {/* FOTO + INFO BÁSICA */}
           <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 items-start mb-10">
             {/* FOTO */}
             <div className="relative w-48 h-48 rounded-lg overflow-hidden border-4 border-red-600 shadow-[0_0_25px_rgba(255,0,0,0.3)] mx-auto md:mx-0">
@@ -48,28 +84,27 @@ export default function AboutPage() {
 
             {/* INFO BÁSICA */}
             <div className="grid grid-cols-2 gap-x-10 gap-y-4">
-              <Info label="Name" value="Cassiano de Sena Crispim" />
-              <Info label="Occupation" value="Full Stack Developer" />
-              <Info label="Gender" value="Male" />
-              <Info label="Age" value="[REDACTED]" red />
-              <Info label="Height" value="1.75 m" />
-              <Info label="Eye Color" value="undefined"  />
+              <Info label={lang === "pt" ? "Nome" : "Name"} value={t.name} />
+              <Info label={lang === "pt" ? "Ocupação" : "Occupation"} value={t.occupation} />
+              <Info label={lang === "pt" ? "Gênero" : "Gender"} value={t.gender} />
+              <Info label={lang === "pt" ? "Idade" : "Age"} value={t.age} red />
+              <Info label={lang === "pt" ? "Altura" : "Height"} value={t.height} />
+              <Info label={lang === "pt" ? "Cor dos Olhos" : "Eye Color"} value={t.eyeColor} />
             </div>
           </div>
 
-          {/* DETALHES RESTANTES (ficam como antes) */}
+          {/* DETALHES EXTRAS */}
           <div className="grid grid-cols-2 gap-8">
-            <Info label="Likes" value="Tea, Problem Solving" />
-            <Info label="Dislikes" value="Noise" />
+            <Info label={lang === "pt" ? "Gosta de" : "Likes"} value={t.likes} />
+            <Info label={lang === "pt" ? "Não gosta de" : "Dislikes"} value={t.dislikes} />
             <div className="col-span-2">
-              <Info label="Current Location" value="[REDACTED]" red />
+              <Info label={lang === "pt" ? "Localização Atual" : "Current Location"} value={t.location} red />
             </div>
           </div>
 
           <div className="border-t border-gray-700 mt-10 pt-4 text-gray-500 text-sm tracking-wide">
-            FILE CREATED:{" "}
-            <span className="text-gray-300">10.23.2025</span> — ACCESS LEVEL:{" "}
-            <span className="text-red-500">OMEGA</span>
+            FILE CREATED: <span className="text-gray-300">{t.fileCreated}</span> — ACCESS LEVEL:{" "}
+            <span className="text-red-500">{t.accessLevel}</span>
           </div>
         </motion.div>
 
@@ -84,13 +119,13 @@ export default function AboutPage() {
             href="/projects"
             className="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-xl text-white font-bold uppercase tracking-widest transition shadow-md"
           >
-            Access Projects
+            {t.accessProjects}
           </a>
           <a
             href="/contact"
             className="border border-red-600 hover:bg-red-800 px-8 py-3 rounded-xl text-gray-200 uppercase tracking-widest transition"
           >
-            Contact Agent
+            {t.contactAgent}
           </a>
         </motion.div>
       </section>
@@ -132,17 +167,11 @@ export default function AboutPage() {
           0% {
             clip-path: inset(0 0 80% 0);
           }
-          20% {
-            clip-path: inset(10% 0 70% 0);
-          }
           40% {
-            clip-path: inset(40% 0 40% 0);
-          }
-          60% {
-            clip-path: inset(50% 0 30% 0);
+            clip-path: inset(30% 0 40% 0);
           }
           80% {
-            clip-path: inset(80% 0 10% 0);
+            clip-path: inset(10% 0 70% 0);
           }
           100% {
             clip-path: inset(0 0 80% 0);
@@ -153,17 +182,11 @@ export default function AboutPage() {
           0% {
             clip-path: inset(80% 0 0 0);
           }
-          20% {
-            clip-path: inset(70% 0 10% 0);
-          }
           40% {
-            clip-path: inset(40% 0 40% 0);
-          }
-          60% {
-            clip-path: inset(30% 0 50% 0);
+            clip-path: inset(50% 0 30% 0);
           }
           80% {
-            clip-path: inset(10% 0 80% 0);
+            clip-path: inset(20% 0 60% 0);
           }
           100% {
             clip-path: inset(80% 0 0 0);
@@ -174,7 +197,7 @@ export default function AboutPage() {
   );
 }
 
-/* COMPONENTE DE TEXTO */
+/* COMPONENTE INFO */
 function Info({
   label,
   value,

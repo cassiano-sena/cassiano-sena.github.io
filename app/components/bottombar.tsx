@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import AudioPlayer from "./audio";
+// import AudioPlayer from "./audio";
 
 export default function Bottombar() {
   return (
@@ -15,7 +15,7 @@ export default function Bottombar() {
           © 2025 Cassiano de Sena. All rights reserved.
         </div>
         <div>
-          <AudioPlayer />
+          {/* <AudioPlayer /> */}
         </div>
       </div>
     </motion.nav>

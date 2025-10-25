@@ -5,7 +5,9 @@ import Bottombar from "../components/bottombar";
 import Navbar from "../components/navbar";
 import { motion } from "framer-motion";
 
-export default function ContactPage() {
+export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
+  const isPt = lang === "pt";
+
   return (
     <main className="bg-gray-950 min-h-screen text-white">
       {/* <Navbar /> */}
@@ -18,7 +20,7 @@ export default function ContactPage() {
           transition={{ duration: 1 }}
           className="text-5xl font-extrabold mb-6 text-accent"
         >
-          Contato
+          {isPt ? "Contato" : "Contact"}
         </motion.h1>
 
         <motion.p
@@ -27,46 +29,53 @@ export default function ContactPage() {
           transition={{ delay: 0.3, duration: 1 }}
           className="text-gray-400 text-lg max-w-2xl leading-relaxed"
         >
+          {isPt
+            ? "Você pode entrar em contato comigo através dos links abaixo:"
+            : "You can reach me through the links below:"}
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1 }}
-          className="mt-10 flex gap-4"
+          className="mt-10 flex flex-wrap justify-center gap-4"
         >
+          {/* Email */}
           <a
-            href="https://github.com/cassiano-sena"
+            href="mailto:cassiano@example.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
-            <img src="/envelope.svg" alt="Email" className="w-10 h-10" />
-            Email
+            <img src="/envelope.svg" alt="Email" className="w-8 h-8" />
+            {isPt ? "Email" : "Email"}
           </a>
 
+          {/* GitHub */}
           <a
             href="https://github.com/cassiano-sena"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
-            <img src="/github.svg" alt="GitHub" className="w-10 h-10" />
+            <img src="/github.svg" alt="GitHub" className="w-8 h-8" />
             GitHub
           </a>
 
+          {/* WhatsApp */}
           <a
-            href=""
+            href="https://wa.me/5547999999999"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
-            <img src="/whatsapp.svg" alt="GitHub" className="w-10 h-10" />
+            <img src="/whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
             WhatsApp
           </a>
         </motion.div>
       </section>
-      <Bottombar/>
+
+      <Bottombar />
     </main>
   );
 }
