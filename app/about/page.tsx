@@ -32,7 +32,7 @@ export default function AboutPage({ lang }: { lang: "pt" | "en" }) {
       eyeColor: "Undefined",
       likes: "Tea, Problem Solving",
       dislikes: "Noise",
-      location: "[REDACTED]",
+      location: "Porto Belo",
       fileCreated: "10.23.2025",
       accessLevel: "OMEGA",
       fileStatus: "CLASSIFIED",
@@ -56,7 +56,7 @@ export default function AboutPage({ lang }: { lang: "pt" | "en" }) {
           className="bg-gray-900/70 border border-gray-700 rounded-2xl shadow-lg p-10 w-full max-w-5xl backdrop-blur-sm relative"
         >
           <div className="absolute top-4 right-6 text-xs text-gray-600">
-            FILE STATUS: <span className="text-red-500 font-bold">{t.fileStatus}</span>
+            {/* FILE STATUS: <span className="text-red-500 font-bold">{t.fileStatus}</span> */}
           </div>
 
           {/* TÍTULO */}
