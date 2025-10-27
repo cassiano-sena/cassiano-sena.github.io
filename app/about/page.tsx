@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function AboutPage({ lang }: { lang: "pt" | "en" }) {
+export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
   const t = {
     pt: {
       title: "███ ARQUIVO DO SUJEITO: CASSIANO ███",
@@ -56,7 +56,7 @@ export default function AboutPage({ lang }: { lang: "pt" | "en" }) {
           className="bg-gray-900/70 border border-gray-700 rounded-2xl shadow-lg p-10 w-full max-w-5xl backdrop-blur-sm relative"
         >
           <div className="absolute top-4 right-6 text-xs text-gray-600">
-            {/* FILE STATUS: <span className="text-red-500 font-bold">{t.fileStatus}</span> */}
+            FILE STATUS: <span className="text-red-500 font-bold">{t.fileStatus}</span>
           </div>
 
           {/* TÍTULO */}
