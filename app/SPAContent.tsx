@@ -9,10 +9,13 @@ import SkillsPage from "./skills/page";
 import ContactPage from "./contact/page";
 import Bottombar from "./components/bottombar";
 import AnimatedBackground from "./components/animatedBackground";
+import CastlesagePage from "./projects/castlesage/page";
+import DuelsPage from "./projects/duels/page";
+import ETransportePage from "./projects/etransporte/page";
 
 export default function SPAContent() {
   const [page, setPage] = useState<
-    "home" | "about" | "projects" | "skills" | "contact"
+    "home" | "about" | "projects" | "skills" | "contact" | "castlesage" | "duels" | "etransporte"
   >("home");
 
   const [lang, setLang] = useState<"pt" | "en">("pt");
@@ -52,11 +55,18 @@ export default function SPAContent() {
       case "about":
         return <AboutPage lang={lang} />;
       case "projects":
-        return <ProjectsPage lang={lang} />;
+        return <ProjectsPage lang={lang} onNavigate={setPage} />;
       case "skills":
         return <SkillsPage lang={lang} />;
       case "contact":
         return <ContactPage lang={lang} />;
+      case "castlesage":
+        return <CastlesagePage lang={lang} onNavigate={setPage} />;
+      case "duels":
+        return <DuelsPage lang={lang} onNavigate={setPage} />;
+      case "etransporte":
+        return <ETransportePage lang={lang} onNavigate={setPage} />;
+
       default:
         return (
           <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
@@ -128,17 +138,20 @@ function NavbarWrapper({
   setLang,
   t,
 }: {
-  onNavigate: (page: "home" | "about" | "projects" | "skills" | "contact") => void;
-  currentPage: "home" | "about" | "projects" | "skills" | "contact";
+  onNavigate: (page: "home" | "about" | "projects" | "skills" | "contact" | "castlesage" | "duels" | "etransporte") => void;
+  currentPage: "home" | "about" | "projects" | "skills" | "contact" | "castlesage" | "duels" | "etransporte";
   lang: "pt" | "en";
   setLang: (lang: "pt" | "en") => void;
   t: any;
 }) {
-  const menuItems: { name: string; page: "about" | "projects" | "skills" | "contact" }[] = [
+  const menuItems: { name: string; page: "about" | "projects" | "skills" | "contact" | "castlesage" | "duels" | "etransporte"}[] = [
     { name: t.projects, page: "projects" },
     { name: t.about, page: "about" },
     { name: t.skills, page: "skills" },
     { name: t.contact, page: "contact" },
+    { name: t.castlesage, page: "castlesage" },
+    { name: t.duels, page: "duels" },
+    { name: t.etransporte, page: "etransporte" },
   ];
 
   return (

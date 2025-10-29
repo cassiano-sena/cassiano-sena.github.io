@@ -4,7 +4,16 @@ import Bottombar from "../components/bottombar";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function ProjectsPage({ lang }: { lang: "pt" | "en" }) {
+export default function ProjectsPage({
+  lang,
+  onNavigate,
+}: {
+  lang: "pt" | "en";
+  onNavigate: (
+    page: "castlesage" | "duels" | "etransporte" | "projects" | "about" | "skills" | "contact" | "home"
+  ) => void;
+}) {
+
   const isPt = lang === "pt";
 
   return (
@@ -64,9 +73,12 @@ export default function ProjectsPage({ lang }: { lang: "pt" | "en" }) {
                 : "Castlesage is a voxel-based MOBA where players team up, collect resources, and fight for objectives until they invade the enemy base and destroy their totem."}
             </p>
 
-            <a href="#" className="text-accent font-medium hover:underline text-sm">
+            <button
+              onClick={() => onNavigate("castlesage")}
+              className="text-accent font-medium hover:underline text-sm"
+            >
               {isPt ? "Ver mais" : "View more"}
-            </a>
+            </button>
           </div>
 
           {/* Card 2 */}
@@ -91,9 +103,13 @@ export default function ProjectsPage({ lang }: { lang: "pt" | "en" }) {
                 ? "eTransporte é um protótipo baseado na web feito em PHP, projetado para agilizar as atividades diárias de transporte dos estudantes. Ele possui funcionalidades de grupo, onde os usuários podem participar e colaborar. Dentro dos grupos, os participantes podem acompanhar os horários, posições e rotas dos ônibus, além de se comunicar com outros membros."
                 : " eTransporte is a web-based PHP prototype designed to streamline students' daily transportation activities. It features group functionality where users can join and collaborate. Within groups, participants can track bus schedules, positions, and routes, as well as communicate with other members."}
             </p>
-            <a href="#" className="text-accent font-medium hover:underline text-sm">
+            <button
+              onClick={() => onNavigate("etransporte")}
+              className="text-accent font-medium hover:underline text-sm"
+            >
               {isPt ? "Ver mais" : "View more"}
-            </a>
+            </button>
+
           </div>
 
           {/* Card 3 */}
@@ -118,9 +134,12 @@ export default function ProjectsPage({ lang }: { lang: "pt" | "en" }) {
                 ? "Duels é um jogo rpg baseado em turnos onde você escolhe seu personagem para batalhar e ficar mais forte."
                 : "Duels is a turn-based rpg game where you choose your character to battle and become stronger."}
             </p>
-            <a href="#" className="text-accent font-medium hover:underline text-sm">
+            <button
+              onClick={() => onNavigate("duels")}
+              className="text-accent font-medium hover:underline text-sm"
+            >
               {isPt ? "Ver mais" : "View more"}
-            </a>
+            </button>
           </div>
         </motion.div>
       </section>
