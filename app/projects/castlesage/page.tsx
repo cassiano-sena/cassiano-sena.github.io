@@ -5,7 +5,7 @@ import Image from "next/image";
 import BackButton from "@/app/components/backbutton";
 
 export default function CastlesagePage({
-  lang,
+  lang="pt",
   onNavigate,
 }: {
   lang: "pt" | "en";
