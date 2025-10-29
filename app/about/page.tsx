@@ -11,9 +11,10 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
       occupation: "Desenvolvedor Full Stack",
       gender: "Masculino",
       age: "[RESTRITO]",
+      dateOfBirth: "20/03/2003",
       height: "1.75 m",
       eyeColor: "Indefinido",
-      likes: "Chá, Paz e Tranquilidade",
+      likes: "Chá",
       dislikes: "Ruído",
       location: "Brasil",
       fileCreated: "23.10.2025",
@@ -29,9 +30,10 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
       occupation: "Full Stack Developer",
       gender: "Male",
       age: "[REDACTED]",
+      dateOfBirth: "03/20/2003",
       height: "1.75 m",
       eyeColor: "Undefined",
-      likes: "Tea, Peace and Tranquility",
+      likes: "Tea",
       dislikes: "Noise",
       location: "Brazil",
       fileCreated: "10.23.2025",
@@ -69,7 +71,7 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
             className="text-4xl md:text-5xl font-extrabold mb-8 text-red-500 tracking-widest about-glitch"
             data-text={t.title}
           >
-            {t.title}
+            {/* {t.title} */}
           </motion.h1>
 
           {/* FOTO + INFO BÁSICA */}
@@ -89,19 +91,20 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
               <Info label={lang === "pt" ? "Nome" : "Name"} value={t.name} />
               <Info label={lang === "pt" ? "Ocupação" : "Occupation"} value={t.occupation} />
               <Info label={lang === "pt" ? "Gênero" : "Gender"} value={t.gender} />
-              <Info label={lang === "pt" ? "Idade" : "Age"} value={t.age} red />
-              <Info label={lang === "pt" ? "Altura" : "Height"} value={t.height} />
-              <Info label={lang === "pt" ? "Cor dos Olhos" : "Eye Color"} value={t.eyeColor} />
+              <Info label={lang === "pt" ? "Data de Nascimento" : "Date of Birth"} value={t.dateOfBirth} red />
+              <Info label={lang === "pt" ? "Altura" : "Height"} value={t.height} red />
+              <Info label={lang === "pt" ? "Localização Atual" : "Current Location"} value={t.location} red />
+              {/* <Info label={lang === "pt" ? "Cor dos Olhos" : "Eye Color"} value={t.eyeColor} /> */}
+              <Info label={lang === "pt" ? "Gosta de" : "Likes"} value={t.likes} />
+              <Info label={lang === "pt" ? "Não gosta de" : "Dislikes"} value={t.dislikes} />
             </div>
           </div>
 
           {/* DETALHES EXTRAS */}
-          <div className="grid grid-cols-2 gap-8">
-            <Info label={lang === "pt" ? "Gosta de" : "Likes"} value={t.likes} />
-            <Info label={lang === "pt" ? "Não gosta de" : "Dislikes"} value={t.dislikes} />
-            <div className="col-span-2">
-              <Info label={lang === "pt" ? "Localização Atual" : "Current Location"} value={t.location} red />
-            </div>
+          <div className="grid grid-cols-2 gap-10">
+            {/* <div className="col-span-2"> */}
+              {/* <Info label={lang === "pt" ? "Localização Atual" : "Current Location"} value={t.location} red /> */}
+            {/* </div> */}
           </div>
 
           {/* DETALHES EXTRAS */}

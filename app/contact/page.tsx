@@ -87,7 +87,7 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="WhatsApp" className="w-8 h-8" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn" className="w-8 h-8" />
             <div className="text-black">
               LinkedIn
             </div>
