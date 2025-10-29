@@ -9,7 +9,7 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
   const isPt = lang === "pt";
 
   return (
-    <main className="bg-gray-950 min-h-screen text-white">
+    <main className="bg-transparent min-h-screen text-white">
       {/* <Navbar /> */}
 
       {/* Seção animada */}
@@ -42,13 +42,15 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
         >
           {/* Email */}
           <a
-            href="mailto:cassiano@example.com"
+            href="mailto:csdscr@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
+            className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
             <img src="/envelope.svg" alt="Email" className="w-8 h-8" />
-            {isPt ? "Email" : "Email"}
+            <div className="text-black">
+              {isPt ? "Email" : "Email"}
+            </div>
           </a>
 
           {/* GitHub */}
@@ -56,26 +58,43 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
             href="https://github.com/cassiano-sena"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
+            className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
-            <img src="/github.svg" alt="GitHub" className="w-8 h-8" />
-            GitHub
+            
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" className="w-8 h-8" />
+            <div className="text-black">
+              GitHub
+            </div>
           </a>
 
           {/* WhatsApp */}
-          <a
-            href="https://wa.me/5547999999999"
+          {/* <a
+            href="https://wa.me/5547992660854"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-white font-medium transition"
+            className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
           >
             <img src="/whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
-            WhatsApp
+            <div className="text-black">
+              WhatsApp
+            </div>
+          </a> */}
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/cassiano-de-sena-crispim-0a84a4213/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
+          >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="WhatsApp" className="w-8 h-8" />
+            <div className="text-black">
+              LinkedIn
+            </div>
           </a>
+
         </motion.div>
       </section>
-
-      <Bottombar />
     </main>
   );
 }

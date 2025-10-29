@@ -13,14 +13,15 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
       age: "[RESTRITO]",
       height: "1.75 m",
       eyeColor: "Indefinido",
-      likes: "Chá, Resolver Problemas",
+      likes: "Chá, Paz e Tranquilidade",
       dislikes: "Ruído",
-      location: "[SIGILOSO]",
+      location: "Brasil",
       fileCreated: "23.10.2025",
       accessLevel: "ÔMEGA",
       fileStatus: "CLASSIFICADO",
       accessProjects: "Acessar Projetos",
       contactAgent: "Contatar Agente",
+      notes:"Bacharelado em Ciencia da Computação pela UNIVALI em progresso, Fluente em Inglês pela Fisk com nota B2 em conversação, leitura e escuta, aprendeu sozinho a desenvolver, adaptabilidade rápida, observador, analítico, gosta de automobilismo, armas e conhecimento.",
     },
     en: {
       title: "███ SUBJECT FILE: CASSIANO ███",
@@ -30,19 +31,20 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
       age: "[REDACTED]",
       height: "1.75 m",
       eyeColor: "Undefined",
-      likes: "Tea, Problem Solving",
+      likes: "Tea, Peace and Tranquility",
       dislikes: "Noise",
-      location: "Porto Belo",
+      location: "Brazil",
       fileCreated: "10.23.2025",
       accessLevel: "OMEGA",
       fileStatus: "CLASSIFIED",
       accessProjects: "Access Projects",
       contactAgent: "Contact Agent",
+      notes:"B.Sc in Computer Science in progress by UNIVALI, Fluent in English by Fisk with B2 grade on conversation, listening and reading, selftaught developer, fast adaptability, good observation, analytic, likes motorsports, guns and knowledge."
     },
   }[lang];
 
   return (
-    <main className="about-page bg-gray-950 min-h-screen text-white font-mono relative overflow-hidden">
+    <main className="about-page bg-transparent min-h-screen text-white font-mono relative overflow-hidden">
       {/* Fundo digital */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.05)_0%,transparent_80%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_29px,rgba(255,255,255,0.05)_30px)] opacity-10 pointer-events-none"></div>
@@ -102,6 +104,13 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
             </div>
           </div>
 
+          {/* DETALHES EXTRAS */}
+          <div className="grid grid-cols-2 gap-8">
+            <div className="col-span-2">
+              <Info label={lang === "pt" ? "Anotações" : "Notes"} value={t.notes} />
+            </div>
+          </div>
+
           <div className="border-t border-gray-700 mt-10 pt-4 text-gray-500 text-sm tracking-wide">
             FILE CREATED: <span className="text-gray-300">{t.fileCreated}</span> — ACCESS LEVEL:{" "}
             <span className="text-red-500">{t.accessLevel}</span>
@@ -115,7 +124,7 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
           transition={{ delay: 0.8, duration: 1 }}
           className="mt-10 flex gap-6 z-10"
         >
-          <a
+          {/* <a
             href="/projects"
             className="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-xl text-white font-bold uppercase tracking-widest transition shadow-md"
           >
@@ -126,7 +135,7 @@ export default function AboutPage({ lang = "en" }: { lang: "pt" | "en" }) {
             className="border border-red-600 hover:bg-red-800 px-8 py-3 rounded-xl text-gray-200 uppercase tracking-widest transition"
           >
             {t.contactAgent}
-          </a>
+          </a> */}
         </motion.div>
       </section>
 

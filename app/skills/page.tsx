@@ -7,7 +7,7 @@ export default function SkillsPage({ lang }: { lang: "pt" | "en" }) {
   const isPt = lang === "pt";
 
   return (
-    <main className="bg-gray-950 min-h-screen text-white">
+    <main className="bg-transparent min-h-screen text-white">
       <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -36,16 +36,30 @@ export default function SkillsPage({ lang }: { lang: "pt" | "en" }) {
           className="mt-10 flex flex-wrap justify-center gap-6"
         >
           {[
+            ["Python", "python"],
             ["PHP", "php"],
             ["Java", "java"],
             ["JavaScript", "javascript"],
             ["C++", "cplusplus"],
-            ["Flutter", "flutter"],
-            ["Kotlin", "kotlin"],
             ["C#", "csharp"],
-            ["Python", "python"],
             ["MySQL", "mysql"],
+            ["Flutter", "flutter"],
+            ["Next.js", "nextjs"],
+            ["Kotlin", "kotlin"],
+            ["Visual Studio Code", "vscode"],
+            ["Visual Studio", "visualstudio"],
             ["Android Studio", "androidstudio"],
+            ["IntelliJ IDEA", "intellij"],
+            ["MySQL Workbench", "mysql"],
+            ["Linux", "linux"],
+            ["Windows", "windows11"],
+            ["Blender", "blender"],
+            ["Unity Engine", "unity"],
+            ["Godot Engine", "godot"],
+            ["Photoshop", "photoshop"],
+            ["Premiere", "premierepro"],
+            ["Git", "git"],
+            ["Github", "github"],
           ].map(([name, icon]) => (
             <span
               key={name}
@@ -61,8 +75,6 @@ export default function SkillsPage({ lang }: { lang: "pt" | "en" }) {
           ))}
         </motion.div>
       </section>
-
-      <Bottombar />
     </main>
   );
 }
