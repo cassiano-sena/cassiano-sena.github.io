@@ -42,7 +42,7 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
         >
           {/* Email */}
           <a
-            href="mailto:csdscr@gmail.com"
+            href="mailto:contato109772@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
@@ -69,7 +69,7 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
 
           {/* WhatsApp */}
           {/* <a
-            href="https://wa.me/5547992660854"
+            href="https://wa.me/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
