@@ -81,8 +81,8 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
           </a> */}
 
           {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/cassiano-de-sena-crispim-0a84a4213/"
+          {/* <a
+            href="https://www.linkedin.com/in/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium transition"
@@ -91,7 +91,7 @@ export default function ContactPage({ lang }: { lang: "pt" | "en" }) {
             <div className="text-black">
               LinkedIn
             </div>
-          </a>
+          </a> */}
 
         </motion.div>
       </section>
