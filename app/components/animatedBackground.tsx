@@ -7,13 +7,13 @@ const messages = [
   "Hello world!",
   "Welcome!",
   "Keep coding",
-  "Cachorro quente é um sanduiche",
-  "conhecimento>>",
-  "O que é um cereal se não uma sopa?",
-  "Programming = Magic",
-  "G150",
-  "Wishlist Castlesage on Steam",
-  "",
+  "Stay curious",
+  "Keep learning"
+  "Never give up",
+  "Embrace challenges",
+  "Think different",
+  "Code is poetry",
+  "Dream big",
 ];
 
 const images = [
