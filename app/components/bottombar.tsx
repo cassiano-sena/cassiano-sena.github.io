@@ -12,7 +12,7 @@ export default function Bottombar() {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="text-white font-bold">
-          © 2025 Cassiano de Sena. All rights reserved.
+          © 2025-2026 Cassiano de Sena. All rights reserved.
         </div>
         <div>
           {/* <AudioPlayer /> */}
